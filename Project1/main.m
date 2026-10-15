@@ -8,7 +8,11 @@ figureDir = fullfile(projectRoot, 'results');
 if ~exist(outputDir, 'dir'); mkdir(outputDir); end
 if ~exist(figureDir, 'dir'); mkdir(figureDir); end
 
-[rawAudio, Fs] = audioread(fullfile(projectRoot, 'audio1.wav'));
+inputPath = fullfile(projectRoot, 'data', 'local_audio', 'audio1.wav');
+if ~isfile(inputPath)
+    error('Missing input audio: %s. See Project1/data/README.md.', inputPath);
+end
+[rawAudio, Fs] = audioread(inputPath);
 signal = rawAudio(:, 1);
 sampleCount = length(signal);
 time = (0:sampleCount-1)' / Fs;

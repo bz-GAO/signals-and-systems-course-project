@@ -8,16 +8,20 @@ This repository is a cleaned and reproducible version of a two-part MATLAB cours
 Project1/
   main.m                         Time/frequency-domain exercises
   functions/                    Reusable MATLAB functions
+  data/local_audio/             Local-only source audio (ignored by Git)
   results/                      Reproducible figures
 Project2/
   main.m                         Real-audio comparison runner
   functions/                    Three vocal-reduction methods
+  data/local_audio/             Local-only song excerpts (ignored by Git)
   experiments/
     run_vocal_benchmark.m        Synthetic ground-truth experiment
     results/                     CSV metrics and benchmark figure
-Report_Source/
+report/
   course_project_report.tex      Anonymized LaTeX report
   course_project_report.pdf      Compiled report
+private/                         Course handout and identified legacy report
+archive/                         Original submissions and superseded outputs
 ```
 
 ## Methods
@@ -33,8 +37,8 @@ The methods reduce any coherent centre-panned material, not only vocals. They ar
 
 MATLAB R2024b or newer is recommended. No Signal Processing Toolbox is required.
 
-1. Put the course-provided `audio1.wav` in `Project1/`.
-2. Optionally put legally usable stereo WAV files directly in `Project2/`.
+1. Put the course-provided `audio1.wav` in `Project1/data/local_audio/`.
+2. Optionally put legally usable stereo WAV files in `Project2/data/local_audio/`.
 3. Run `Project1/main.m`.
 4. Run `Project2/experiments/run_vocal_benchmark.m` for the objective benchmark.
 5. Run `Project2/main.m` to generate listening examples for local audio files.

@@ -5,14 +5,15 @@ clear; clc; close all;
 
 projectRoot = fileparts(mfilename('fullpath'));
 addpath(fullfile(projectRoot, 'functions'));
+inputRoot = fullfile(projectRoot, 'data', 'local_audio');
 outputRoot = fullfile(projectRoot, 'outputs');
 if ~exist(outputRoot, 'dir')
     mkdir(outputRoot);
 end
 
-audioFiles = dir(fullfile(projectRoot, '*.wav'));
+audioFiles = dir(fullfile(inputRoot, '*.wav'));
 if isempty(audioFiles)
-    error('No WAV files were found in %s.', projectRoot);
+    error('No WAV files were found in %s. See Project2/data/README.md.', inputRoot);
 end
 
 for fileIndex = 1:length(audioFiles)
