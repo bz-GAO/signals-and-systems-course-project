@@ -1,0 +1,7 @@
+scenario,method,vocal_attenuation_db,accompaniment_sdr_db,output_snr_db
+ideal_centre,basic_L_minus_R,-80.0000,80.0000,80.0000
+ideal_centre,legacy_bass_rescue,-61.4999,18.4358,60.2637
+ideal_centre,adaptive,-80.0000,80.0000,80.0000
+gain_delay_mismatch,basic_L_minus_R,-10.6917,80.0000,10.2650
+gain_delay_mismatch,legacy_bass_rescue,-10.6917,18.4358,10.3240
+gain_delay_mismatch,adaptive,-26.5409,12.0589,26.8024

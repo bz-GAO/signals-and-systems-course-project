@@ -7,6 +7,11 @@
 *.wav
 *.mp3
 
+# Reproducible figures and metrics are tracked; generated listening samples are not.
+Project1/outputs/
+Project2/outputs/
+Project2/experiments/results/*.wav
+
 # Legacy report contains personal information; the new LaTeX report is tracked instead
 Report_Source/Course_Project_Report_Revised.md
 Report_Source/Course_Project_Report_Revised.pdf

@@ -1,19 +1,17 @@
-function [Y, f_axis] = mySpectrumPlot(y, Fs, fig_title, subplot_pos)
-    % 计算 FFT 并绘制频谱幅度图
-    N = length(y);
-    Y = fft(y); % 傅里叶变换函数
-    
-    % 将零频点移到频谱中心
-    Y_shifted = fftshift(Y);
-    
-    % 构造对称的频率轴
-    f_axis = linspace(-Fs/2, Fs/2, N);
-    
-    % 绘制幅度谱
-    subplot(subplot_pos(1), subplot_pos(2), subplot_pos(3));
-    plot(f_axis, abs(Y_shifted));
-    title(fig_title);
+function [Y, frequency] = mySpectrumPlot(y, Fs, plotTitle, subplotPosition)
+%MYSPECTRUMPLOT Compute a DFT and plot its normalized two-sided magnitude.
+
+    y = y(:);
+    sampleCount = length(y);
+    Y = fft(y);
+    shiftedSpectrum = fftshift(Y);
+    frequency = ((-floor(sampleCount / 2)):(ceil(sampleCount / 2) - 1))' ...
+        * (Fs / sampleCount);
+
+    subplot(subplotPosition(1), subplotPosition(2), subplotPosition(3));
+    plot(frequency, abs(shiftedSpectrum) / sampleCount);
+    title(plotTitle);
     xlabel('Frequency (Hz)');
-    ylabel('Magnitude');
+    ylabel('Normalized magnitude');
     grid on;
 end
