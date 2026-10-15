@@ -1,0 +1,40 @@
+# Course submission archives and duplicate submission tree
+提交/
+*.zip
+*.zip.zip
+
+# Third-party or copyrighted source audio and generated WAV outputs
+*.wav
+*.mp3
+
+# Legacy report contains personal information; the new LaTeX report is tracked instead
+Report_Source/Course_Project_Report_Revised.md
+Report_Source/Course_Project_Report_Revised.pdf
+Course_Project_2026.pdf
+
+# MATLAB temporary files
+*.asv
+*.autosave
+*.m~
+slprj/
+codegen/
+
+# LaTeX build products
+Report_Source/build/
+Report_Source/*.aux
+Report_Source/*.bbl
+Report_Source/*.bcf
+Report_Source/*.blg
+Report_Source/*.fdb_latexmk
+Report_Source/*.fls
+Report_Source/*.log
+Report_Source/*.out
+Report_Source/*.run.xml
+Report_Source/*.synctex.gz
+Report_Source/*.toc
+
+# Editor and operating-system files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
