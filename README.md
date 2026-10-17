@@ -1,6 +1,6 @@
 # Signals and Systems Course Project
 
-This repository is a cleaned and reproducible version of a two-part MATLAB course project. It demonstrates time-domain transformations, discrete Fourier analysis, ideal filtering, and stereo centre-source reduction. The second part includes both the original baselines and a new controlled benchmark with known source components.
+This two-part MATLAB course project demonstrates time-domain transformations, discrete Fourier analysis, ideal filtering, and stereo centre-source reduction. The second part compares three cancellation methods in a controlled benchmark with known source components.
 
 ## Repository structure
 
@@ -18,10 +18,8 @@ Project2/
     run_vocal_benchmark.m        Synthetic ground-truth experiment
     results/                     CSV metrics and benchmark figure
 report/
-  course_project_report.tex      Anonymized LaTeX report
+  course_project_report.tex      LaTeX report source
   course_project_report.pdf      Compiled report
-private/                         Course handout and identified legacy report
-archive/                         Original submissions and superseded outputs
 ```
 
 ## Methods
@@ -45,8 +43,8 @@ MATLAB R2024b or newer is recommended. No Signal Processing Toolbox is required.
 
 Audio files are intentionally excluded from version control. The controlled benchmark generates its own test signal, so the key experiment remains reproducible without copyrighted music.
 
-## Publication and academic-use note
+## Scope and academic use
 
-This repository is suitable for a portfolio after the cleanup in this version, provided that copyrighted songs, student identifiers, the original assignment PDF, and submission archives remain excluded. The report is anonymized. If published, describe it as a course project and keep the limitations section intact.
+The controlled benchmark is reproducible without external recordings. Listening examples require user-supplied audio; source songs are not distributed with this repository. See the report for the assumptions and limitations of centre cancellation.
 
-The code is shared for learning and reproducibility. Do not submit it as another student's coursework.
+This is a course project for learning and reproducibility. Cite the source when referencing it, and do not submit it as your own coursework. No open-source license is included.

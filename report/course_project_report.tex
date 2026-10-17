@@ -24,7 +24,7 @@
 \setlength{\headheight}{14pt}
 \fancyhf{}
 \lhead{Signals and Systems Course Project}
-\rhead{Anonymized portfolio edition}
+\rhead{Audio-Signal Analysis}
 \cfoot{\thepage}
 
 \newcommand{\code}[1]{\texttt{#1}}
@@ -46,14 +46,12 @@
   \vfill
   \begin{minipage}{0.82\textwidth}
     \colorbox{soft}{\parbox{0.94\textwidth}{
-      \textbf{Portfolio edition.} This report removes personal identifiers,
-      separates reproducible evidence from subjective listening, and adds a
-      controlled ground-truth experiment for the vocal-reduction methods.
+      \textbf{Experimental scope.} Time-domain and Fourier-domain audio
+      transformations, stereo centre cancellation, and a controlled
+      ground-truth comparison of three vocal-reduction methods.
     }}
   \end{minipage}
   \vfill
-  {\large Author information withheld\par}
-  \vspace{0.3cm}
   {\large October 2026\par}
 \end{titlepage}
 
@@ -83,10 +81,9 @@ frequency spectra, reconstruction from magnitude or phase, and ideal low-pass
 filtering. Project~2 offers a choice of applications; this work implements the
 voice-eliminator option and discusses both theory and practical improvement.
 
-All processing is implemented in MATLAB. The public-facing repository excludes
-the original songs, submission archives, student identifiers, and the course
-handout. The controlled benchmark creates its own signals and therefore remains
-fully reproducible without copyrighted audio.
+All processing is implemented in MATLAB. The audio-processing exercises require
+user-supplied recordings. The controlled benchmark creates its own signals and
+is reproducible without external audio.
 
 \section{Project 1: time- and frequency-domain processing}
 
@@ -336,12 +333,12 @@ the metrics CSV and figures are tracked.
 
 \section{Conclusion}
 
-The project now does more than demonstrate textbook operators. It shows where
-the assumptions behind centre cancellation succeed, where the original
-bass-rescue idea fails, and how a narrowly targeted correction changes both
-vocal leakage and accompaniment fidelity. The strongest portfolio value lies in
-this evidence-driven comparison: a simple baseline, a motivated improvement,
-an objective benchmark, and an explicit account of limitations.
+Centre cancellation depends on inter-channel coherence and removes centred
+accompaniment as well as vocals. The controlled benchmark shows that gain-and-delay
+compensation reduces vocal leakage under the tested channel mismatch, but also
+distorts the accompaniment. The bass-rescue method restores low-frequency
+content at the cost of vocal leakage. These results support targeted correction
+for a specific failure mode, not universal vocal separation.
 
 \begin{thebibliography}{9}
 \bibitem{oppenheim}
